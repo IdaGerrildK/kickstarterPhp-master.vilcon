@@ -16,6 +16,8 @@ require "settings/init.php";
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+Hej verden
+
 
 <body>
 <div class="row g-2">
