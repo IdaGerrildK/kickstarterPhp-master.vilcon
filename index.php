@@ -19,6 +19,7 @@ require "settings/init.php";
 Hej verden
 
 hej verden
+hej verden
 
 <body>
 <div class="row g-2">
