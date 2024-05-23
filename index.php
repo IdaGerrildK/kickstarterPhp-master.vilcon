@@ -5,8 +5,8 @@ if(!empty($_POST["data"])) {
     $data = $_POST["data"];
 
 
-    $sql = "INSERT INTO bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokAarsag)";
-    $bind = [":bokNames" => $data["bokNames"], ":bokEmail" => $data["bokEmail"], ":bokTlf" => $data["bokTlf"], ":bokAntal" => $data["bokAntal"], ":bokDate" => $data["bokDate"], ":bokAarsag" => $data["bokAarsag"]];
+    $sql = "INSERT INTO bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokTime, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokTime, :bokAarsag)";
+    $bind = [":bokNames" => $data["bokNames"], ":bokEmail" => $data["bokEmail"], ":bokTlf" => $data["bokTlf"], ":bokAntal" => $data["bokAntal"], ":bokDate" => $data["bokDate"], ":bokTime" => $data["bokTime"], ":bokAarsag" => $data["bokAarsag"]];
 
     $db->sql($sql, $bind, false);
 
@@ -37,8 +37,8 @@ if(!empty($_POST["data"])) {
 
 <body>
 
-<div class="container mt-5 bg-grundfarve">
-    <form action="insert.php" method="post">
+<div class="container mt-5 bg-warning">
+    <form action="index.php" method="post">
         <div class="row g-3">
             <div class="col-12 col-md-6">
                 <label for="bokNames" class="form-label">Navn</label>
