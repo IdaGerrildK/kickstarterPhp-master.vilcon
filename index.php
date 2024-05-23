@@ -60,6 +60,11 @@ if(!empty($_POST["data"])) {
                 <textarea class="form-control" name="data[bokAntal]" id="bokAntal" placeholder="Indtast dit antal mennesker"></textarea>
             </div>
 
+            <div class="mb-3">
+                <label for="endTime">Bestil tid</label>
+                <input type="datetime" id="endTime" class="form-control">
+            </div>
+
             <div class="col-12 col-md-4 offset-md-8">
                 <button type="submit" class="btn btn-primary w-100">Book</button>
             </div>
