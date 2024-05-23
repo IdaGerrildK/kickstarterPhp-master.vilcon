@@ -5,12 +5,12 @@ if(!empty($_POST["data"])) {
     $data = $_POST["data"];
 
 
-    $sql = "INSERT INTO billetkoeb(bilNames, bilEmail, bilTlf, bilAntal) VALUES(:bilNames, :bilEmail, :bilTlf, :bilAntal)";
-    $bind = [":bilNames" => $data["bilNames"], ":bilEmail" => $data["bilEmail"], ":bilTlf" => $data["bilTlf"], ":bilAntal" => $data["bilAntal"]];
+    $sql = "INSERT INTO bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokAarsag)";
+    $bind = [":bokNames" => $data["bokNames"], ":bokEmail" => $data["bokEmail"], ":bokTlf" => $data["bokTlf"], ":bokAntal" => $data["bokAntal"], ":bokDate" => $data["bokDate"], ":bokAarsag" => $data["bokAarsag"]];
 
     $db->sql($sql, $bind, false);
 
-    echo "Du har nu booket billett(er) <a href='alle.html'>Tilbage til forsiden<a/>";
+    echo "Du har nu booket bord, tak for din bestilling, vi værdsætter det højt. <a href='forside.html'>Tilbage til forsiden<a/>";
     exit;
 }
 
@@ -20,7 +20,7 @@ if(!empty($_POST["data"])) {
 <head>
     <meta charset="utf-8">
 
-    <title>VISIT</title>
+    <title>Hotel Strandparken Restaurant</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -32,46 +32,36 @@ if(!empty($_POST["data"])) {
 
     <script src="https://kit.fontawesome.com/bd6ccfb77e.js" crossorigin="anonymous"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
 
 </head>
 
 <body>
 
-<a href="alle.html"><i class="fa-solid fa-house home text-hjemmegron m-2"></i></a>
-
-<div class="container d-flex justify-content-center align-items-center mb-5">
-    <a href="knapper.html"><img src="pic/logofeardiglille.png" alt="logo"></a>
-</div>
-
 <div class="container mt-5 bg-grundfarve">
     <form action="insert.php" method="post">
         <div class="row g-3">
             <div class="col-12 col-md-6">
-                <label for="bilNames" class="form-label">Navn</label>
-                <input type="text" class="form-control" id="bilNames" name="data[bilNames]" placeholder="Indtast dit navn"
+                <label for="bokNames" class="form-label">Navn</label>
+                <input type="text" class="form-control" id="bokNames" name="data[bokNames]" placeholder="Indtast dit navn"
                        value="">
             </div>
             <div class="col-12 col-md-6">
-                <label for="bilEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="bilEmail" name="data[bilEmail]"
+                <label for="bokEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="bokEmail" name="data[bokEmail]"
                        placeholder="Indtast din Email" value="">
             </div>
             <div class="col-12">
-                <label for="bilTlf" class="form-label">Mobilnummer</label>
-                <textarea class="form-control" name="data[bilTlf]" id="bilTlf" placeholder="Indtast dit mobilnummer"></textarea>
+                <label for="bokTlf" class="form-label">Mobilnummer</label>
+                <textarea class="form-control" name="data[bokTlf]" id="bokTlf" placeholder="Indtast dit mobilnummer"></textarea>
             </div>
 
             <div class="col-12">
-                <label for="bilAntal" class="form-label">Antal mennesker</label>
-                <textarea class="form-control" name="data[bilAntal]" id="bilAntal" placeholder="Indtast dit antal mennesker"></textarea>
+                <label for="bokAntal" class="form-label">Antal mennesker</label>
+                <textarea class="form-control" name="data[bokAntal]" id="bokAntal" placeholder="Indtast dit antal mennesker"></textarea>
             </div>
 
             <div class="col-12 col-md-4 offset-md-8">
-                <button type="submit" class="btn btn-hjemmegron w-100">Opret</button>
+                <button type="submit" class="btn btn-primary w-100">Book</button>
             </div>
         </div>
     </form>
