@@ -61,12 +61,12 @@ if(!empty($_POST["data"])) {
             </div>
 
             <div class="mb-3">
-                <label for="endTime">Bestil tid</label>
+                <label for="bokDate">Bestil tid</label>
                 <input type="date" id="bokDate" class="form-control">
             </div>
 
             <div class="mb-3">
-                <label for="endTime">Bestil tid</label>
+                <label for="bokTime">Bestil tid</label>
                 <input type="time" id="bokTime" class="form-control">
             </div>
 
