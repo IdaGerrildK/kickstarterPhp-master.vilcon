@@ -62,7 +62,12 @@ if(!empty($_POST["data"])) {
 
             <div class="mb-3">
                 <label for="endTime">Bestil tid</label>
-                <input type="datetime" id="endTime" class="form-control">
+                <input type="date" id="bokDate" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="endTime">Bestil tid</label>
+                <input type="time" id="bokTime" class="form-control">
             </div>
 
             <div class="col-12 col-md-4 offset-md-8">
