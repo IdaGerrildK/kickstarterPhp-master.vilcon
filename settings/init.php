@@ -9,9 +9,9 @@ define("CONFIG_LIVE", "0"); // 0: Test enviroment || 1: Live enviroment
 
 if(CONFIG_LIVE == 0){
     $DB_SERVER = "localhost";
-    $DB_NAME = "test";
+    $DB_NAME = "vilcon";
     $DB_USER = "root";
-    $DB_PASS = "";
+    $DB_PASS = "root";
 }else{
     $DB_SERVER = "";
     $DB_NAME = "";
