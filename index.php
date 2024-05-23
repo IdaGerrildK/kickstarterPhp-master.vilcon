@@ -32,6 +32,17 @@ if(!empty($_POST["data"])) {
 
     <script src="https://kit.fontawesome.com/bd6ccfb77e.js" crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f0e6;
+        }
+    </style>
+
+
 
 </head>
 
@@ -68,6 +79,11 @@ if(!empty($_POST["data"])) {
             <div class="mb-3">
                 <label for="bokTime">Bestil tid</label>
                 <input type="time" id="bokTime" class="form-control">
+            </div>
+
+            <div class="col-12">
+                <label for="bokAarsag" class="form-label">Årsag</label>
+                <textarea class="form-control" name="data[bokAarsag]" id="bokAarsag" placeholder="Årsag (fx. Fødselsdag eller møde)"></textarea>
             </div>
 
             <div class="col-12 col-md-4 offset-md-8">
