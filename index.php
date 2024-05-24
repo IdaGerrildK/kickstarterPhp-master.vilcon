@@ -3,9 +3,13 @@ require "settings/init.php";
 
 if(!empty($_POST["data"])) {
     $data = $_POST["data"];
+    $dato = $_POST["dato"];
+    $tid = $_POST["tid"];
 
+    $datetime = $dato .''. $tid;
+    $data["datetime"] = $datetime;
 
-    $sql = "INSERT INTO bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokTime, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokTime, :bokAarsag)";
+    $sql = "SELECT * FROM bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokTime, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokTime, :bokAarsag)";
     $bind = [":bokNames" => $data["bokNames"], ":bokEmail" => $data["bokEmail"], ":bokTlf" => $data["bokTlf"], ":bokAntal" => $data["bokAntal"], ":bokDate" => $data["bokDate"], ":bokTime" => $data["bokTime"], ":bokAarsag" => $data["bokAarsag"]];
 
     $db->sql($sql, $bind, false);
