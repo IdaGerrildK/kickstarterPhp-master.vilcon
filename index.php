@@ -2,8 +2,8 @@
 require "settings/init.php";
 
 if(!empty($_POST["data"]))
-if(!empty($_POST["date"]))  
-if(!empty($_POST["time"]))
+if(empty($_POST["date"]))
+if(empty($_POST["time"]))
 {
     $data = $_POST["data"];
     $date = $_POST["bokDate"];
@@ -13,7 +13,7 @@ if(!empty($_POST["time"]))
     $data["datetime"] = $datetime;
 
     $sql = "INSERT INTO bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokTime, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokTime, :bokAarsag)";
-    $bind = [":bokNames" => $data["bokNames"], ":bokEmail" => $data["bokEmail"], ":bokTlf" => $data["bokTlf"], ":bokAntal" => $data["bokAntal"], ":bokDate" => $data["bokDate"], ":bokTime" => $data["bokTime"], ":bokAarsag" => $data["bokAarsag"]];
+    $bind = [":bokNames" => $data["bokNames"], ":bokEmail" => $data["bokEmail"], ":bokTlf" => $data["bokTlf"], ":bokAntal" => $data["bokAntal"], ":bokDate" => $date["bokDate"], ":bokTime" => $time["bokTime"], ":bokAarsag" => $data["bokAarsag"]];
 
     $db->sql($sql, $bind, false);
 
@@ -79,13 +79,13 @@ if(!empty($_POST["time"]))
             </div>
 
             <div class="mb-3">
-                <label for="bokDate">Bestil tid</label>
-                <input type="date" name="dato[bokDate]" id="bokDate" class="form-control">
+                <label for="bokDate">Book dato</label>
+                <input type="date" name="date[bokDate]" id="bokDate" class="form-control">
             </div>
 
             <div class="mb-3">
-                <label for="bokTime">Bestil tid</label>
-                <input type="time" name=tid[bokTime]" id="bokTime" class="form-control">
+                <label for="bokTime">Book tid</label>
+                <input type="time" name=time[bokTime]" id="bokTime" class="form-control">
             </div>
 
             <div class="col-12">
