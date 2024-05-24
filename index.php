@@ -1,15 +1,18 @@
 <?php
 require "settings/init.php";
 
-if(!empty($_POST["data"])) {
+if(!empty($_POST["data"]))
+if(!empty($_POST["date"]))  
+if(!empty($_POST["time"]))
+{
     $data = $_POST["data"];
-    $dato = $_POST["dato"];
-    $tid = $_POST["tid"];
+    $date = $_POST["bokDate"];
+    $time = $_POST["bokTime"];
 
-    $datetime = $dato .''. $tid;
+    $datetime = $date .''. $time;
     $data["datetime"] = $datetime;
 
-    $sql = "SELECT * FROM bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokTime, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokTime, :bokAarsag)";
+    $sql = "INSERT INTO bordbooking(bokNames, bokEmail, bokTlf, bokAntal, bokDate, bokTime, bokAarsag) VALUES(:bokNames, :bokEmail, :bokTlf, :bokAntal, :bokDate, :bokTime, :bokAarsag)";
     $bind = [":bokNames" => $data["bokNames"], ":bokEmail" => $data["bokEmail"], ":bokTlf" => $data["bokTlf"], ":bokAntal" => $data["bokAntal"], ":bokDate" => $data["bokDate"], ":bokTime" => $data["bokTime"], ":bokAarsag" => $data["bokAarsag"]];
 
     $db->sql($sql, $bind, false);
@@ -77,12 +80,12 @@ if(!empty($_POST["data"])) {
 
             <div class="mb-3">
                 <label for="bokDate">Bestil tid</label>
-                <input type="date" id="bokDate" class="form-control">
+                <input type="date" name="dato[bokDate]" id="bokDate" class="form-control">
             </div>
 
             <div class="mb-3">
                 <label for="bokTime">Bestil tid</label>
-                <input type="time" id="bokTime" class="form-control">
+                <input type="time" name=tid[bokTime]" id="bokTime" class="form-control">
             </div>
 
             <div class="col-12">
