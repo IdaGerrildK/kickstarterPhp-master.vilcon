@@ -13,7 +13,12 @@ if(!empty($_POST["data"])) {
 
     $db->sql($sql, $bind, false);
 
-    echo "Du har nu booket bord, tak for din bestilling, vi værdsætter det højt. <a href='forside.html'>Tilbage til forsiden<a/>";
+    echo '
+    <div style="margin: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f4f0e6; text-align: center;">
+        <h2 style="color: #202020;">Tak for din bestilling!</h2>
+        <p>Du har nu booket bord på restaurant Blossom, tak for din bestilling, vi værdsætter det højt.</p>
+        <a href="forside.html" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #d7e5e8; color: #202020; text-decoration: none; border-radius: 5px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);">Tilbage til forsiden</a>
+    </div>';
     exit;
 }
 
@@ -52,6 +57,11 @@ if(!empty($_POST["data"])) {
 <body>
 
 <a href="privatellerselskab.html"><i class="fa-solid fa-arrow-left arrowleft text-tekstfarve m-3"></i></a>
+
+<div class="container text-center">
+    <img src="img/logomedkunblomt2.png">
+</div>
+
 
 <br>
 <br>
@@ -96,7 +106,7 @@ if(!empty($_POST["data"])) {
             </div>
 
             <div class="col-12 col-md-4 offset-md-8">
-                <button type="submit" class="btn btn-knapfarve w-100"><h4>Book</h4></button>
+                <button type="submit" class="btn btn-knapfarve w-100 btn-shadow"><h4>Book</h4></button>
             </div>
         </div>
     </form>
