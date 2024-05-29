@@ -58,9 +58,9 @@ if(!empty($_POST["data"])) {
 
 <a href="privatellerselskab.html"><i class="fa-solid fa-arrow-left arrowleft text-tekstfarve m-3"></i></a>
 
-<div class="container text-center">
-    <img src="img/logomedkunblomt2.png">
-</div>
+<a href="forside.html"><div class="container text-center">
+        <img src="img/logomedkunblomt2.png">
+    </div></a>
 
 <br>
 
