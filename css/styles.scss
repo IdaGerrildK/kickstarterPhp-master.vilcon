@@ -34,16 +34,25 @@ body{
 }
 
 
+
 .video-container {
 	position: relative;
 	width: 100%;
-	max-width: 1550px;
-	margin: 0 auto;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	background: #000;
 }
+
 .video-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
-	height: auto;
+	height: 100%;
 }
+
 .btn-over-video {
 	position: absolute;
 	top: 50%;
