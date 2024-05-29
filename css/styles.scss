@@ -10,7 +10,11 @@ $link-decoration: none;
 
 // 4. Include any default map overrides here
 $custom-colors: (
-	"farve": $cyan-400,
+				"En farve": $cyan-400,
+				"baggrundsfarve": adjust-color(#f4f0e6),
+				"knapfarve": adjust-color(#d7e5e8),
+				"tekstfarve": adjust-color(#202020),
+
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -21,5 +25,38 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 
 body{
-	font-family: "Zen Antique", sans-serif;
+	font-family: "Zen Antique", sans-serif; color: #202020;
+}
+
+
+.btn-shadow {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.video-container {
+	position: relative;
+	width: 100%;
+	max-width: 1550px;
+	margin: 0 auto;
+}
+.video-container video {
+	width: 100%;
+	height: auto;
+}
+.btn-over-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+}
+
+.arrowleft{
+	font-size: 35px;
+;
+}
+
+.btn-privat {
+	font-size: 100px;
 }

@@ -2,7 +2,9 @@
 require "settings/init.php";
 
 if(!empty($_POST["data"])) {
-    $data = $_POST['data'];
+    $data = $_POST["data"];
+    $bokDate = $_POST["bokDate"];
+    $bokTime = $_POST["bokTime"];
 
 
 
@@ -82,23 +84,20 @@ if(!empty($_POST["data"])) {
             </div>
 
             <div class="mb-3">
-                <label for="bokDate">Book dato</label>
-                <input type="date" name="data[bokDate]" id="bokDate" class="form-control">
+                <label for="bokDate">Dato</label>
+                <input type="date" id="bokDate" class="form-control">
             </div>
 
             <div class="mb-3">
-                <label for="bokTime">Book tid</label>
-                <input type="time" name="data[bokTime]" id="bokTime" class="form-control">
-            </div>
-
-            <div class="col-12">
-                <label for="bokAarsag" class="form-label">Årsag</label>
-                <textarea class="form-control" name="data[bokAarsag]" id="bokAarsag" placeholder="Årsag (fx. Fødselsdag eller møde)"></textarea>
+                <label for="bokTime">Tidspunkt</label>
+                <input type="time" id="bokTime" class="form-control">
             </div>
 
             <div class="col-12 col-md-4 offset-md-8">
                 <button type="submit" class="btn btn-knapfarve w-100"><h4>Book</h4></button>
             </div>
+
+
         </div>
     </form>
 </div>
