@@ -55,8 +55,7 @@ if(!empty($_POST["data"])) {
 
 <br>
 <br>
-<br>
-<br>
+
 
 <div class="container mt-5 bg-baggrundsfarve">
     <form action="index.php" method="post">
